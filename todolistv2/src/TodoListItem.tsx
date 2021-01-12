@@ -14,23 +14,24 @@ export const TodoListItem: React.FC<Props> = ({todo,toggleTodo}) => {
                 <ItemInput type="checkbox" 
                 checked={todo.complete} 
                 onClick={()=>{
-                    toggleTodo(todo);
+                    toggleTodo(todo)
                 }}> 
                 </ItemInput>
                 {todo.text}
             </ItemLabel>
         </ItemList>
-    );
+    )
 }
 
 
 const ItemList = styled.li`
-    background-color:pink;
-    text-align: center;
-`;
+    text-align : center;
+    width:30%;
+
+`
 
 const ItemLabel = styled.label<Todo>`
-    text-decoration: ${(props)=>props.complete? 'line-through' : undefined};
+    text-decoration: ${(props)=>props.complete? 'line-through' : undefined}
 `
 
 const ItemInput = styled.input`

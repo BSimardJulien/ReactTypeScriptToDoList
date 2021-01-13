@@ -23,10 +23,18 @@ function App(){
     setTodos([...todos,newTodo]);
   };
 
+  const removeTodo: RemoveTodo = (selectedTodo: Todo) => {
+    const newTodos = todos.map(todo=>{
+      return todo;
+    });
+    newTodos.pop();
+    setTodos(newTodos);
+  };
+
 
   return(
     <>
-      <TodoList todos={todos} toggleTodo={toggleTodo}/>
+      <TodoList todos={todos} toggleTodo={toggleTodo} removeTodo={removeTodo}/>
       <AddTodoForm addTodo={addTodo} />
     </>
   );
